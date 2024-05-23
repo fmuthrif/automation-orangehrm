@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class login_step_orangeHRM extends env {
     login_object_orangeHRM elementLogin = new login_object_orangeHRM();
+
     @Given("User is in login page")
     public void user_is_in_login_page() {
         wait = new WebDriverWait(driver, 10);
