@@ -12,6 +12,6 @@ public class login_object_orangeHRM {
     By btnLogin = By.xpath("//*[@class=\"oxd-button oxd-button--medium oxd-button--main orangehrm-login-button\"]");
     public By getBtnLogin(){ return btnLogin; }
 
-    By txtDashboard = By.xpath("//*[contains(text(), 'Dashboard']");
+    By txtDashboard = By.xpath("//*[@class=\"oxd-main-menu-item active\"]");
     public By getTxtDashboard(){ return txtDashboard; }
 }

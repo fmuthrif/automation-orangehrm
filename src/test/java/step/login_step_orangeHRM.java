@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import object.login_object_orangeHRM;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -34,7 +35,7 @@ public class login_step_orangeHRM extends env {
     }
     @Then("user redirect to dashboard page")
     public void user_redirect_to_dashboard_page() {
-        wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(elementLogin.getTxtDashboard())).isDisplayed();
+        String URL = driver.getCurrentUrl();
+        Assert.assertEquals(URL, "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
     }
 }
