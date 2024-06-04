@@ -13,8 +13,12 @@ public class hooks extends env {
     public void before(){
         System.setProperty("webdriver.chrome.driver", "D:\\selenium-basic\\automation-orangehrm\\src\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get("https://opensource-demo.orangehrmlive.com");
                 driver.manage().window().maximize();
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--disable-gpu");
+//        WebDriverManager.chromedriver().forceDownload().setup();
+//        ChromeDriver webDriver = new ChromeDriver(chromeOptions);
     }
     @After
     public void after(){
