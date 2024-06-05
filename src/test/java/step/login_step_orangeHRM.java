@@ -16,7 +16,7 @@ public class login_step_orangeHRM extends env {
     @Given("User is in login page")
     public void user_is_in_login_page() {
         wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(elementLogin.getBtnLogin()));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(elementLogin.getBtnLogin()));
         driver.findElement(elementLogin.getTxtUsername()).isDisplayed();
         driver.findElement(elementLogin.getTxtPassword()).isDisplayed();
         driver.findElement(elementLogin.getBtnLogin()).isDisplayed();
@@ -37,5 +37,18 @@ public class login_step_orangeHRM extends env {
     public void user_redirect_to_dashboard_page() {
         String URL = driver.getCurrentUrl();
         Assert.assertEquals(URL, "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+    }
+    @And("User click dropdown account")
+    public void user_click_dropdown_account() {
+        driver.findElement(elementLogin.getImgAccount()).click();
+    }
+    @And("User click logout")
+    public void user_click_logout() {
+        driver.findElement(elementLogin.getTxtLogout()).click();
+    }
+    @Then("User redirected to login page")
+    public void user_redirected_to_login_page() {
+        String URL = driver.getCurrentUrl();
+        Assert.assertEquals(URL, "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 }
